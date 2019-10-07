@@ -13,6 +13,7 @@
 		787E442A234B1B6000AD8531 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 787E4429234B1B6000AD8531 /* Assets.xcassets */; };
 		787E442D234B1B6000AD8531 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 787E442C234B1B6000AD8531 /* Preview Assets.xcassets */; };
 		787E4430234B1B6000AD8531 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 787E442E234B1B6000AD8531 /* LaunchScreen.storyboard */; };
+		787E4458234B4EFB00AD8531 /* ProfitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787E4457234B4EFB00AD8531 /* ProfitView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		787E442C234B1B6000AD8531 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		787E442F234B1B6000AD8531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		787E4431234B1B6000AD8531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		787E4457234B4EFB00AD8531 /* ProfitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfitView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				787E4423234B1B5C00AD8531 /* AppDelegate.swift */,
 				787E4425234B1B5C00AD8531 /* SceneDelegate.swift */,
 				787E4427234B1B5C00AD8531 /* ContentView.swift */,
+				787E4457234B4EFB00AD8531 /* ProfitView.swift */,
 				787E4429234B1B6000AD8531 /* Assets.xcassets */,
 				787E442E234B1B6000AD8531 /* LaunchScreen.storyboard */,
 				787E4431234B1B6000AD8531 /* Info.plist */,
@@ -149,6 +152,7 @@
 				787E4424234B1B5C00AD8531 /* AppDelegate.swift in Sources */,
 				787E4426234B1B5C00AD8531 /* SceneDelegate.swift in Sources */,
 				787E4428234B1B5C00AD8531 /* ContentView.swift in Sources */,
+				787E4458234B4EFB00AD8531 /* ProfitView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

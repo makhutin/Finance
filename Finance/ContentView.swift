@@ -14,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            Text("First View")
+            ProfitView()
                 .tabItem {
                     Image(systemName: "circle")
                     Text("Доходы")
