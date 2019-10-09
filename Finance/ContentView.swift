@@ -24,7 +24,7 @@ struct ContentView: View {
                     Image(systemName: "circle")
                     Text("График")
                 }.tag(1)
-            Text("Third view")
+            CostsView()
                 .tabItem({
                     Image(systemName: "circle")
                     Text("Расходы")
