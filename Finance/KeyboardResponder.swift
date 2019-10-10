@@ -38,4 +38,6 @@ extension View {
     func endEditing(_ force: Bool) {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
     }
+    
+    
 }

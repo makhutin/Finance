@@ -9,12 +9,16 @@
 import SwiftUI
 
 struct CreateProfit: View {
+    //config
+    private let buttonColor = Config.share.buttonColor
+    
     @State var inputShow: Bool
     @State private(set) var inputtext = ""
-    private let buttonColor = Color(.sRGB, red: 0/255, green: 122/255, blue: 255/255, opacity: 1)
+    
     
     var body: some View {
         VStack {
+            //textfield
             HStack{
                 TextField("Сумма", text: $inputtext)
                     .keyboardType(.numberPad)
@@ -24,7 +28,10 @@ struct CreateProfit: View {
             }
             .padding()
             .opacity(inputShow ? 1 : 0).animation(.easeInOut)
+            
+            //button
             Button(action: {
+                //button action
                 if !self.inputShow {
                     withAnimation {
                         self.inputShow.toggle()
@@ -37,17 +44,19 @@ struct CreateProfit: View {
                     }
                 }
             }, label: {
-                Text("Добавить доход").foregroundColor(.white)
-                })
-                .frame(width: UIScreen.main.bounds.width - 32, height: 50, alignment: .center)
-                .background((inputtext.isEmpty && inputShow) ? buttonColor.opacity(0.7) : buttonColor )
-                .cornerRadius(25)
-                .disabled(inputtext.isEmpty && inputShow)
-            if inputShow {
-                Spacer()
+                VStack{
+                    Text("Добавить доход").foregroundColor(.white)
+                    .frame(width: UIScreen.main.bounds.width - 32, height: 50, alignment: .center)
+                    .background((inputtext.isEmpty && inputShow) ? buttonColor.opacity(0.7) : buttonColor )
+                    .cornerRadius(25)
                 }
-            }
+                
+                })
+                .disabled(inputtext.isEmpty && inputShow)
+                .padding()
+                .offset(y: -20)
         }
+    }
 }
 
 struct CreateProfit_Previews: PreviewProvider {

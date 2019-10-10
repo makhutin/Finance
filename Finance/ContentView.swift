@@ -14,16 +14,19 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
+            //main view
             ProfitView()
                 .tabItem {
                     Image(systemName: "circle")
                     Text("Доходы")
                 }.tag(0)
+            //graf view
             Text("Second View")
                 .tabItem {
                     Image(systemName: "circle")
                     Text("График")
                 }.tag(1)
+            //cost view
             CostsView()
                 .tabItem({
                     Image(systemName: "circle")
