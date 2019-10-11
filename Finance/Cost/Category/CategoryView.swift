@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct CategoryView: View {
+    @EnvironmentObject var cost: Cost
+    var catId: Int
     //config
     let buttonColor = Config.share.buttonColor
     let cellheight = Config.share.cellHeight
@@ -19,7 +21,7 @@ struct CategoryView: View {
     @State private(set) var inputCount = ""
     @State private var showCreate = false
     
-    var category: UserCostCategory
+    
     
     var body: some View {
         // zstack first for create item count
@@ -42,10 +44,14 @@ struct CategoryView: View {
                         //table with all items costs in current category
                         List {
                             CostCell(name: "На что", data: "Когда", cost: "Сколько").foregroundColor(Color.gray)
-                            ForEach(category.items, id: \.self) { elem in
-                                CostCell(name: elem.name, data: elem.date, cost: elem.cost)
-                            }
+                            ForEach(cost.items.filter { (item) -> Bool in
+                                return item.catId == self.catId
+                            }) { elem in
+                                CostCell(name: elem.name, data: elem.textDate, cost: elem.textCost)
+                            }.onDelete(perform: deleteItems)
                         }
+                        //padding for table
+                        Spacer().frame(height: cellheight * 2)
                         
                         //bottom button add new costs
                         Button(action: {
@@ -65,6 +71,7 @@ struct CategoryView: View {
                         }
                             .frame(width: UIScreen.main.bounds.width)
                             .background(colorScheme == .dark ? Color.black : Color.white)
+                            //first vstack end
                         
             }
             //fill all views when user enters text
@@ -97,13 +104,15 @@ struct CategoryView: View {
                          }
                      .padding()
                     
-                    //Button
+                    //add item cost button action
                     Button(action: {
                          withAnimation {
-                             self.inputCount = ""
-                             self.inputName = ""
-                             self.showCreate = false
-                             self.endEditing(true)
+                            let newCost = Double(self.inputCount) ?? 0
+                            self.cost.add(cost: newCost, catKey: self.catId, name: self.inputName)
+                            self.inputCount = ""
+                            self.inputName = ""
+                            self.showCreate = false
+                            self.endEditing(true)
                         }
                     }, label: {
                         VStack{
@@ -117,23 +126,29 @@ struct CategoryView: View {
                         .disabled(inputCount.isEmpty || inputName.isEmpty)
                         .padding()
                     .offset(y: -20)
+                    
                 }
                     .frame(height: cellheight * 3 + 50, alignment: .top)
                     .background(colorScheme == .dark ? Color.black : Color.white)
                     .offset(y: -keyboard.currentHeight + 100)
+                    //if show create Vstack end
             }
+            //second zstack end
+            
         }.navigationBarTitle(Text(""),displayMode: .inline)
-        
-        
+        //first zstack end
+    }
+    
+    func deleteItems(at offsets: IndexSet) {
+        let items = cost.items.filter { $0.catId == self.catId }
+        offsets.forEach({ cost.remove(item: items[$0]) })
     }
 }
 
 struct CategoryView_Previews: PreviewProvider {
+    static var cost = Cost()
+    
     static var previews: some View {
-        CategoryView(keyboard: KeyboardResponder(), category: UserCostCategory(id: 0, name: "Дом",
-                                                                               items: [
-                                                                                CostItem(name: "Жкх", cost: "7000p", date: "21.23.12"),
-                                                                                CostItem(name: "Плов", cost: "7000p", date: "21.23.12"),
-                                                                                CostItem(name: "Еда", cost: "7000p", date: "21.23.12"),]))
+        CategoryView(catId: 0, keyboard: KeyboardResponder()).environmentObject(cost)
     }
 }

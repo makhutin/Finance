@@ -10,21 +10,23 @@ import SwiftUI
 
 struct CellProfit: View {
     
-    var user: UserProfit
+    var user: IncomeItem
     
     var body: some View {
         HStack {
-            Text(user.data)
+            Text(user.textDate)
             Spacer()
-            Text(user.count)
+            Text(user.textIncome)
             Spacer()
         }
-        
     }
+    
 }
 
 struct CellProfit_Previews: PreviewProvider {
+    static let income = Income()
+    
     static var previews: some View {
-        CellProfit(user: userData[0])
+        CellProfit(user: income.items[0])
     }
 }

@@ -10,12 +10,14 @@ import SwiftUI
 
 struct ContentView: View {
     
+    let income = Income()
+    let cost = Cost()
     @State var selectedView = 1
     
     var body: some View {
         TabView {
             //main view
-            ProfitView()
+            ProfitView().environmentObject(income).environmentObject(cost)
                 .tabItem {
                     Image(systemName: "circle")
                     Text("Доходы")
@@ -27,12 +29,17 @@ struct ContentView: View {
                     Text("График")
                 }.tag(1)
             //cost view
-            CostsView()
+            CostsView().environmentObject(income).environmentObject(cost)
                 .tabItem({
                     Image(systemName: "circle")
                     Text("Расходы")
                 })
-        }
+            //view did load
+        }.onAppear(perform: didLoad)
+    }
+    private func didLoad() {
+        income.updateDate()
+        cost.updateDate()
     }
 }
 

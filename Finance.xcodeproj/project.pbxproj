@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7848B2E3234F9E85002E8668 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848B2E2234F9E85002E8668 /* Config.swift */; };
+		7848B2E7234FA6FC002E8668 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7848B2E6234FA6FC002E8668 /* RealmSwift.framework */; };
+		7848B2E9234FA704002E8668 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7848B2E8234FA704002E8668 /* Realm.framework */; };
+		7848B2EC234FA827002E8668 /* PersistanceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848B2EB234FA827002E8668 /* PersistanceData.swift */; };
+		7848B2EE234FAA1F002E8668 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848B2ED234FAA1F002E8668 /* DataLoader.swift */; };
 		787E4424234B1B5C00AD8531 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787E4423234B1B5C00AD8531 /* AppDelegate.swift */; };
 		787E4426234B1B5C00AD8531 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787E4425234B1B5C00AD8531 /* SceneDelegate.swift */; };
 		787E4428234B1B5C00AD8531 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787E4427234B1B5C00AD8531 /* ContentView.swift */; };
@@ -16,7 +20,6 @@
 		787E4430234B1B6000AD8531 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 787E442E234B1B6000AD8531 /* LaunchScreen.storyboard */; };
 		787E4458234B4EFB00AD8531 /* ProfitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787E4457234B4EFB00AD8531 /* ProfitView.swift */; };
 		787E445A234B700400AD8531 /* CellProfit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787E4459234B700400AD8531 /* CellProfit.swift */; };
-		787E445D234B70FA00AD8531 /* UserProfit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787E445C234B70FA00AD8531 /* UserProfit.swift */; };
 		78B222AA234E205400450F46 /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B222A9234E205400450F46 /* KeyboardResponder.swift */; };
 		78B222AC234E61B200450F46 /* CostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B222AB234E61B200450F46 /* CostsView.swift */; };
 		78B222AF234E63BA00450F46 /* CreateCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B222AE234E63BA00450F46 /* CreateCategory.swift */; };
@@ -27,6 +30,10 @@
 
 /* Begin PBXFileReference section */
 		7848B2E2234F9E85002E8668 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		7848B2E6234FA6FC002E8668 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		7848B2E8234FA704002E8668 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		7848B2EB234FA827002E8668 /* PersistanceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceData.swift; sourceTree = "<group>"; };
+		7848B2ED234FAA1F002E8668 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		787E4420234B1B5C00AD8531 /* Finance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		787E4423234B1B5C00AD8531 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		787E4425234B1B5C00AD8531 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +44,6 @@
 		787E4431234B1B6000AD8531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		787E4457234B4EFB00AD8531 /* ProfitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfitView.swift; sourceTree = "<group>"; };
 		787E4459234B700400AD8531 /* CellProfit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProfit.swift; sourceTree = "<group>"; };
-		787E445C234B70FA00AD8531 /* UserProfit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfit.swift; sourceTree = "<group>"; };
 		78B222A9234E205400450F46 /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		78B222AB234E61B200450F46 /* CostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostsView.swift; sourceTree = "<group>"; };
 		78B222AE234E63BA00450F46 /* CreateCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategory.swift; sourceTree = "<group>"; };
@@ -51,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7848B2E9234FA704002E8668 /* Realm.framework in Frameworks */,
+				7848B2E7234FA6FC002E8668 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +70,8 @@
 			children = (
 				787E4422234B1B5C00AD8531 /* Finance */,
 				787E4421234B1B5C00AD8531 /* Products */,
+				7848B2E8234FA704002E8668 /* Realm.framework */,
+				7848B2E6234FA6FC002E8668 /* RealmSwift.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,7 +90,8 @@
 				787E4425234B1B5C00AD8531 /* SceneDelegate.swift */,
 				78B222A9234E205400450F46 /* KeyboardResponder.swift */,
 				7848B2E2234F9E85002E8668 /* Config.swift */,
-				787E445C234B70FA00AD8531 /* UserProfit.swift */,
+				7848B2EB234FA827002E8668 /* PersistanceData.swift */,
+				7848B2ED234FAA1F002E8668 /* DataLoader.swift */,
 				787E4427234B1B5C00AD8531 /* ContentView.swift */,
 				78B222AD234E638C00450F46 /* Cost */,
 				787E445B234B70CE00AD8531 /* Profit */,
@@ -139,6 +150,7 @@
 				787E441C234B1B5C00AD8531 /* Sources */,
 				787E441D234B1B5C00AD8531 /* Frameworks */,
 				787E441E234B1B5C00AD8531 /* Resources */,
+				7848B2EA234FA731002E8668 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -195,6 +207,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7848B2EA234FA731002E8668 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		787E441C234B1B5C00AD8531 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -203,12 +237,13 @@
 				787E4424234B1B5C00AD8531 /* AppDelegate.swift in Sources */,
 				78B222AF234E63BA00450F46 /* CreateCategory.swift in Sources */,
 				787E4426234B1B5C00AD8531 /* SceneDelegate.swift in Sources */,
-				787E445D234B70FA00AD8531 /* UserProfit.swift in Sources */,
 				78B222AC234E61B200450F46 /* CostsView.swift in Sources */,
+				7848B2EE234FAA1F002E8668 /* DataLoader.swift in Sources */,
 				78B222B1234E65B100450F46 /* CategoryView.swift in Sources */,
 				7848B2E3234F9E85002E8668 /* Config.swift in Sources */,
 				78B222B7234F5A8A00450F46 /* CostCell.swift in Sources */,
 				787E4428234B1B5C00AD8531 /* ContentView.swift in Sources */,
+				7848B2EC234FA827002E8668 /* PersistanceData.swift in Sources */,
 				78D763C9234CEC5500B62C71 /* CreateProfit.swift in Sources */,
 				78B222AA234E205400450F46 /* KeyboardResponder.swift in Sources */,
 				787E445A234B700400AD8531 /* CellProfit.swift in Sources */,
@@ -352,6 +387,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Finance/Preview Content\"";
 				DEVELOPMENT_TEAM = MZTVVF39C7;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Finance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -372,6 +411,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Finance/Preview Content\"";
 				DEVELOPMENT_TEAM = MZTVVF39C7;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Finance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

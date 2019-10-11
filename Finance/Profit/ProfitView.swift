@@ -9,19 +9,24 @@
 import SwiftUI
 
 struct ProfitView: View {
-    //config
-    let cellheight: CGFloat = Config.share.cellHeight
+    @EnvironmentObject var income: Income
+    @EnvironmentObject var cost: Cost
     
+    //config
     @Environment(\.colorScheme) var colorScheme: ColorScheme
+    
     @ObservedObject var keyboard = KeyboardResponder()
     @State private var inputShow = false
     @State private var inputtext = ""
     
+    let cellheight: CGFloat = Config.share.cellHeight
     var count: Double {
         //balance plz replace to new func
-        return userData.reduce(into: 0.0) { (res, elem) in
-            res += elem.countDouble
-        }
+        return income.items.reduce(into: 0.0) { (res, elem) in
+            res += elem.income
+            } - cost.items.reduce(into: 0.0) { (res, elem) in
+            res += elem.cost
+            }
     }
     
     var textCount: String {
@@ -50,12 +55,14 @@ struct ProfitView: View {
                     .font(.custom("HelveticaNeue-Bold", size: 28))
                 //table with data all incomme
                 List {
-                    ForEach(userData) { user in
+                    ForEach(income.items) { user in
                     CellProfit(user: user)
                         .frame(height: self.cellheight, alignment: .center)
                     }
                     .onDelete(perform: deleteItems)
                 }
+                //padding for table
+                Spacer().frame(height: cellheight * 2)
             }
             //fill view when user enters text
             if keyboard.currentHeight > 0 {
@@ -78,12 +85,13 @@ struct ProfitView: View {
     }
     
     func deleteItems(at offsets: IndexSet) {
-        offsets.forEach({ print($0) })
+        offsets.forEach({ income.remove(item: income.items[$0]) })
     }
 }
 
 struct Profit_Previews: PreviewProvider {
+    static let income = Income()
     static var previews: some View {
-        ProfitView()
+        ProfitView().environmentObject(income)
     }
 }

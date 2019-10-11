@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct CreateCategory: View {
+    @EnvironmentObject var cost: Cost
     //config
     let buttonColor = Config.share.buttonColor
     
@@ -37,6 +38,7 @@ struct CreateCategory: View {
                     }
                 }else{
                     withAnimation {
+                        self.cost.addCategory(income: self.inputtext)
                         self.inputtext = ""
                         self.inputShow.toggle()
                         self.endEditing(true)
@@ -59,7 +61,9 @@ struct CreateCategory: View {
 }
 
 struct CreateCategory_Previews: PreviewProvider {
+    static var cost = Cost()
+    
     static var previews: some View {
-        CreateCategory(inputShow: true, inputtext: "")
+        CreateCategory(inputShow: true).environmentObject(cost)
     }
 }

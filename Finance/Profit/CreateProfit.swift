@@ -11,7 +11,7 @@ import SwiftUI
 struct CreateProfit: View {
     //config
     private let buttonColor = Config.share.buttonColor
-    
+    @EnvironmentObject var income: Income
     @State var inputShow: Bool
     @State private(set) var inputtext = ""
     
@@ -37,6 +37,10 @@ struct CreateProfit: View {
                         self.inputShow.toggle()
                     }
                 }else{
+                    if let data = Double(self.inputtext) {
+                        self.income.add(income: data)
+                    }
+                    
                     withAnimation {
                         self.inputtext = ""
                         self.inputShow.toggle()
@@ -60,7 +64,9 @@ struct CreateProfit: View {
 }
 
 struct CreateProfit_Previews: PreviewProvider {
+    static let income = Income()
+    
     static var previews: some View {
-        CreateProfit(inputShow: true)
+        CreateProfit(inputShow: true).environmentObject(income)
     }
 }
