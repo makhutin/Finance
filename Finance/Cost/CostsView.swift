@@ -64,7 +64,11 @@ struct CostsView: View {
             .navigationBarItems(trailing: EditButton().simultaneousGesture(TapGesture().onEnded {
                 self.listIsEdit.toggle()
             }))
-        }
+        }.onAppear(perform: didAppear)
+    }
+    
+    func didAppear() {
+        listIsEdit = false
     }
     
     func deleteCat(at offsets: IndexSet) {

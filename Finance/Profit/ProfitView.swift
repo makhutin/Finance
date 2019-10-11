@@ -17,24 +17,8 @@ struct ProfitView: View {
     
     @ObservedObject var keyboard = KeyboardResponder()
     @State private var inputShow = false
-    @State private var inputtext = ""
     
     let cellheight: CGFloat = Config.share.cellHeight
-    var count: Double {
-        //balance plz replace to new func
-        return income.items.reduce(into: 0.0) { (res, elem) in
-            res += elem.income
-            } - cost.items.reduce(into: 0.0) { (res, elem) in
-            res += elem.cost
-            }
-    }
-    
-    var textCount: String {
-        get {
-            let value = String(format:"%.2f",count) + "P"
-            return value
-        }
-    }
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -44,7 +28,8 @@ struct ProfitView: View {
                     Text("Текущий баланс:")
                         .font(.system(size: 16))
                     Spacer()
-                    Text(textCount)
+                    //Balance
+                    Text(getBalance())
                         .font(.custom("HelveticaNeue-Bold", size: 24))
                     }
                 .padding(16)
@@ -77,7 +62,7 @@ struct ProfitView: View {
             }
             //create profit view, show when press add income
             VStack {
-                CreateProfit(inputShow: inputShow, inputtext: inputtext)
+                CreateProfit(inputShow: inputShow)
                     .frame(height: cellheight * 2 + 100, alignment: .top)
                     .background(colorScheme == .dark ? Color.black : Color.white)
             }.offset(y: -keyboard.currentHeight + 100)
@@ -87,6 +72,11 @@ struct ProfitView: View {
     func deleteItems(at offsets: IndexSet) {
         offsets.forEach({ income.remove(item: income.items[$0]) })
     }
+    
+    func getBalance() -> String{
+        return String(format:"%.2f",income.incomeBalance - cost.allCost) + "P"
+    }
+    
 }
 
 struct Profit_Previews: PreviewProvider {
