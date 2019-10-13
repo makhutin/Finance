@@ -151,6 +151,7 @@ class Cost: ObservableObject {
         categories.removeAll { (elem) -> Bool in
                 return elem.id == item.id
         }
+        items.removeAll { $0.catId == item.id }
         //realm
         PersistanceData.shared.deleteCategory(withKey: item.id)
     }

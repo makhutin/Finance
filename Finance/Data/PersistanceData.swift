@@ -70,6 +70,8 @@ class PersistanceData {
     }
     
     func addIncome(item: IncomeItemRealm) {
+        let oldData = realm.objects(IncomeItemRealm.self).filter("key = \(item.key)")
+        if oldData.count > 0 { return }
         try! realm.write {
             realm.add(item)
         }
@@ -104,6 +106,8 @@ class PersistanceData {
     }
     
     func addCategory(item: CostCategoryRealm) {
+        let oldData = realm.objects(CostCategoryRealm.self).filter("key = \(item.key)")
+        if oldData.count > 0 { return }
         try! realm.write {
             realm.add(item)
         }
@@ -128,6 +132,8 @@ class PersistanceData {
     }
     
     func addCost(item: CostItemRealm) {
+        let oldData = realm.objects(CostItemRealm.self).filter("key = \(item.key)")
+        if oldData.count > 0 { return }
         try! realm.write {
             realm.add(item)
         }

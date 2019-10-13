@@ -30,14 +30,13 @@ struct CategoryView: View {
                     VStack(alignment: .center, spacing: 10){
                         
                         // top button with graf
-                        Button(action: {
-                        }, label: {
+                        NavigationLink(destination: GraphView(catId: catId, showIncome: false).environmentObject(cost), label: {
                             Text("График платежей").foregroundColor(.white)
-                        })
                             .frame(width: UIScreen.main.bounds.width - 32, height: 50, alignment: .center)
                             .background(buttonColor)
                             .cornerRadius(25)
                             .offset(y: 7)
+                        })
                         Spacer()
                             .frame(height: 15)
                         
@@ -50,8 +49,6 @@ struct CategoryView: View {
                                 CostCell(name: elem.name, data: elem.textDate, cost: elem.textCost)
                             }.onDelete(perform: deleteItems)
                         }
-                        //padding for table
-                        Spacer().frame(height: cellheight * 2)
                         
                         //bottom button add new costs
                         Button(action: {

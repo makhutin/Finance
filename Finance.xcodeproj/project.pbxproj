@@ -25,6 +25,8 @@
 		78B222AF234E63BA00450F46 /* CreateCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B222AE234E63BA00450F46 /* CreateCategory.swift */; };
 		78B222B1234E65B100450F46 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B222B0234E65B100450F46 /* CategoryView.swift */; };
 		78B222B7234F5A8A00450F46 /* CostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B222B6234F5A8A00450F46 /* CostCell.swift */; };
+		78C62BFE2352627B00E3E3FD /* Graphi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C62BFD2352627B00E3E3FD /* Graphi.swift */; };
+		78C62C0023535FF500E3E3FD /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C62BFF23535FF500E3E3FD /* GraphView.swift */; };
 		78D763C9234CEC5500B62C71 /* CreateProfit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D763C8234CEC5500B62C71 /* CreateProfit.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		78B222AE234E63BA00450F46 /* CreateCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategory.swift; sourceTree = "<group>"; };
 		78B222B0234E65B100450F46 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		78B222B6234F5A8A00450F46 /* CostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostCell.swift; sourceTree = "<group>"; };
+		78C62BFD2352627B00E3E3FD /* Graphi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graphi.swift; sourceTree = "<group>"; };
+		78C62BFF23535FF500E3E3FD /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		78D763C8234CEC5500B62C71 /* CreateProfit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,10 +93,10 @@
 				787E4423234B1B5C00AD8531 /* AppDelegate.swift */,
 				787E4425234B1B5C00AD8531 /* SceneDelegate.swift */,
 				78B222A9234E205400450F46 /* KeyboardResponder.swift */,
-				7848B2E2234F9E85002E8668 /* Config.swift */,
-				7848B2EB234FA827002E8668 /* PersistanceData.swift */,
-				7848B2ED234FAA1F002E8668 /* DataLoader.swift */,
 				787E4427234B1B5C00AD8531 /* ContentView.swift */,
+				7848B2E2234F9E85002E8668 /* Config.swift */,
+				78C62C022353A57600E3E3FD /* Data */,
+				78C62C01235394F100E3E3FD /* Graph */,
 				78B222AD234E638C00450F46 /* Cost */,
 				787E445B234B70CE00AD8531 /* Profit */,
 				787E4429234B1B6000AD8531 /* Assets.xcassets */,
@@ -138,6 +142,24 @@
 				78B222B6234F5A8A00450F46 /* CostCell.swift */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		78C62C01235394F100E3E3FD /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				78C62BFF23535FF500E3E3FD /* GraphView.swift */,
+				78C62BFD2352627B00E3E3FD /* Graphi.swift */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
+		78C62C022353A57600E3E3FD /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7848B2EB234FA827002E8668 /* PersistanceData.swift */,
+				7848B2ED234FAA1F002E8668 /* DataLoader.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,11 +263,13 @@
 				7848B2EE234FAA1F002E8668 /* DataLoader.swift in Sources */,
 				78B222B1234E65B100450F46 /* CategoryView.swift in Sources */,
 				7848B2E3234F9E85002E8668 /* Config.swift in Sources */,
+				78C62C0023535FF500E3E3FD /* GraphView.swift in Sources */,
 				78B222B7234F5A8A00450F46 /* CostCell.swift in Sources */,
 				787E4428234B1B5C00AD8531 /* ContentView.swift in Sources */,
 				7848B2EC234FA827002E8668 /* PersistanceData.swift in Sources */,
 				78D763C9234CEC5500B62C71 /* CreateProfit.swift in Sources */,
 				78B222AA234E205400450F46 /* KeyboardResponder.swift in Sources */,
+				78C62BFE2352627B00E3E3FD /* Graphi.swift in Sources */,
 				787E445A234B700400AD8531 /* CellProfit.swift in Sources */,
 				787E4458234B4EFB00AD8531 /* ProfitView.swift in Sources */,
 			);

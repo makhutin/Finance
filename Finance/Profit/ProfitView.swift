@@ -81,7 +81,8 @@ struct ProfitView: View {
 
 struct Profit_Previews: PreviewProvider {
     static let income = Income()
+    static let cost = Cost()
     static var previews: some View {
-        ProfitView().environmentObject(income)
+        ProfitView().environmentObject(income).environmentObject(cost)
     }
 }
